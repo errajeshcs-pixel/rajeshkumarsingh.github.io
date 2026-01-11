@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rajesh Kumar Singh</title>
+  <meta name="description" content="Data Architect | 20+ Years | Oracle, Azure, Databricks, Snowflake | Portfolio & Contact" />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --border:#e2e8f0;
+      --shadow: 0 18px 50px rgba(2,6,23,.10);
+      --shadow2: 0 10px 30px rgba(2,6,23,.08);
+      --radius: 22px;
+      --btn:#114bbe;
+      --btnText:#ffffff;
+      --max: 1060px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 550px at 10% -10%, rgba(2,132,199,.10), transparent 55%),
+        radial-gradient(900px 520px at 95% 5%, rgba(99,102,241,.10), transparent 55%),
+        linear-gradient(180deg, #ffffff, #f8fafc 70%, #ffffff);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:26px 18px 80px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      position:sticky; top:0; padding:14px 0; backdrop-filter: blur(10px);
+    }
+    .topbar::before{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background: rgba(24, 129, 215, 0.7);
+      border-bottom:1px solid rgba(69, 144, 243, 0.75);
+    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:220px}
+    .mark{
+      width:42px; height:42px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(8, 58, 175, 0.95), rgba(12, 62, 179, 0.75)),
+      url("6.png");
+      box-shadow: var(--shadow2);
+    }
+    .brand h1{margin:0; font-size:16px; letter-spacing:.2px}
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(187, 91, 197, 0.8);
+      font-size:13px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .navlink:hover{transform: translateY(-1px); box-shadow: var(--shadow2); background:#fff}
+    /* Hero */
+    .hero{margin-top:18px;
+      border-radius: 30px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid var(--border);
+      background: linear-gradient(135deg, #0b3c5d, #092c44);
+      position:relative;
+    }
+    .heroBg{position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(11,60,93,.88), rgba(9,44,68,.72) 45%, rgba(9,44,68,.45)),
+        url("towerbridge_twilight.png") center/cover no-repeat;
+      filter:saturate(1.05);
+    }
+    .heroInner{
+      position:relative;
+      padding: 42px 28px;
+      display:grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap:18px;
+      align-items:center;
+      color:#fff;
+    }
+    @media (max-width: 900px){
+      .heroInner{grid-template-columns:1fr; text-align:center}
+      nav{display:none}
+      .brand{min-width:unset}
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:13px;
+      color: rgba(226,232,240,.95);
+    }
+    .title{margin:14px 0 10px; font-size:44px; line-height:1.05; letter-spacing:-.7px}
+    @media (max-width: 520px){ .title{font-size:34px} }
+    .sub{
+      margin:0;
+      color: rgba(226,232,240,.92);
+      font-size:16px;
+      line-height:1.5;
+      max-width: 58ch;
+    }
+    .btnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    @media (max-width: 900px){ .btnRow{justify-content:center} }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.95);
+      color: #0b1220;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 10px 26px rgba(0,0,0,.18);
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 16px 38px rgba(0,0,0,.22)}
+    .btn.dark{background:#0b1220; color:#fff; border-color: rgba(255,255,255,.14)}
+    .btn.ghost{background: rgba(255,255,255,.10); color:#fff}
+    .profile1{
+      justify-self:end;
+      width:min(70px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 200px;
+      overflow:hidden;
+      border: 4px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.06);
+    }
+    .profile{
+      justify-self:end;
+      width:min(240px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      overflow:hidden;
+      border: 8px solid rgba(255,255,255,.12);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.06);
+    }
+    @media (max-width: 900px){ .profile{justify-self:center} }
+    .profile img{width:100%; height:100%; object-fit:cover}
+    /* Sections */
+    .section{margin-top:26px}
+    .section h2{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding:16px;
+    }
+    .card p{margin:8px 0 0; color: var(--muted); line-height:1.55}
+    .span6{grid-column: span 6}
+    .span4{grid-column: span 4}
+    .span8{grid-column: span 8}
+    .span12{grid-column: span 12}
+    @media (max-width: 900px){
+      .span6,.span4,.span8{grid-column: span 12}
+    }
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #067aed;
+      border: 1px solid #e2e8f0;
+      color:#0f172a;
+      white-space: nowrap;
+    }
+    .smallLink{
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top: 10px;
+      color:#0b1220;
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .smallLink span{opacity:.65}
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    .shot{
+      grid-column: span 4;
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow: var(--shadow2);
+      background:#fff;
+    }
+    .shot.wide{grid-column: span 8}
+    .shot img{width:100%; height:100%; object-fit:cover; display:block}
+    @media (max-width: 900px){
+      .shot, .shot.wide{grid-column: span 12}
+    }
+    footer{
+      margin-top:32px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align:center;
+    }
+    .note{
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(226,232,240,.85);
+      opacity:.95;
+    }
+  </style>
+</head>
+
+<body>
+   
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+       <div>
+          <h1>Rajesh Kumar Singh</h1>
+          <p>Data Architect I Mentor I Technology Leader I PMP I M.Tech in Data Science (BITS Pilani)</p>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#highlights">Highlights</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="#articles">Articles</a>
+        <a class="navlink" href="#connect">Connect</a>
+      </nav>
+    </div>
+
+    <!-- HERO (Kushal-like: centered message + bold buttons) -->
+    <section class="hero" id="top">
+      <div class="heroBg" aria-hidden="true"></div>
+      <div class="heroInner">
+        <div>
+          <div class="kicker">Transforming complex data into scalable, actionable insights</div>
+          <h2 class="title">Rajesh Kumar Singh</h2>
+          <p class="sub">
+           20+ Yrs of Experience in Data Architect I Mentor I Technology Leader I PMP I Educator I B.Tech in Computer Science I M.Tech in Data Science (BITS Pilani).
+          </p>
+
+          <div class="btnRow" role="group" aria-label="Primary links">
+            <!-- Update these links anytime -->
+            <a class="btn" href="#articles">Medium / Articles</a>
+            <a class="btn dark" href="https://topmate.io/errajeshcs">Get in Touch</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/rajesh-kumar-singh-pmp%C2%AE-0b289415/" title="Add your LinkedIn URL">View LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/errajeshcs-pixel" title="Add your GitHub URL">My GitHub</a>
+          </div>
+        </div>
+
+        <div class="profile" aria-label="Profile photo">
+          <img src="Rajesh.png" alt="Rajesh Kumar Singh portrait" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>About</h2>
+      <div class="grid">
+        <div class="card span8">
+          <strong>About Me</strong>
+          <p>I am a Data Architect ,Mentor and Technology Leader with over 20 years of experience across data engineering, analytics, cloud platforms, and enterprise systems. I specialize in designing scalable data architectures, modernizing legacy systems, and translating complex business problems into practical, high-impact solutions.
+            I have led large data and cloud initiatives , working extensively with Azure, Databricks, Snowflake, and Python, Oracle, SQL Server . Alongside industry work, I actively mentor professionals on data architecture, career transitions, certifications, and leadership growth.
+            <p>I enjoy teaching, Math , Backend Coding ,problem-solving, and helping individuals and teams move from data to decisions with clarity and confidence.</p>
+            <p>I help organisations turn scattered data into trusted products-through solid architecture, robust pipelines,
+            and governance-driven delivery.</p>
+          </p>
+          <div class="pillRow" aria-label="Key skills">
+            <span class="pill">Data Architecture</span>
+            <span class="pill">Azure</span>
+            <span class="pill">Databricks</span>
+            <span class="pill">ADF</span>
+            <span class="pill">Snowflake</span>
+            <span class="pill">ADF / ETL</span>
+            <span class="pill">Data Governance</span>
+            <span class="pill">Data Lakehouse</span>
+            <span class="pill">Tableau / Power BI</span>
+            <span class="pill">Oracle PL/SQL/T-SQL</span>
+            <span class="pill">Python / PySpark</span>
+            <span class="pill">.NET /C#/ASP.NET </span>
+          </div>
+        </div>
+
+        <div class="card span4">
+          <strong>Quick facts</strong>
+          <p>
+            <b>Experience:</b> 20+ years<br/>
+            <b>Focus:</b> Data Architect I Mentor I Technology Leader I Project Management I Educator <br/>
+            <b>Based:</b> UK (open to opportunities)
+          </p>
+          <a class="smallLink" href="https://topmate.io/errajeshcs">Let’s collaborate <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section" id="highlights">
+      <h2>Highlights</h2>
+      <div class="grid">
+        <div class="card span6">
+          <strong>Cloud & Modernization</strong>
+          <p>Migration strategy workshops, lakehouse patterns (Bronze/Silver/Gold), governance and cost-aware design, Data Modeling and Front end Development-.Net and Java script</p>
+        </div>
+        <div class="card span6">
+          <strong>Performance & Reliability</strong>
+          <p>SQL/PLSQL,DataPipe tuning,scalable orchestration, data quality checks, logging and production support playbooks.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2>Selected work</h2>
+      <div class="grid">
+        <div class="card span4">
+          <strong>TERI → Azure Migration Blueprint</strong>
+          <p>Designed an 8-week migration strategy and target architecture using Kusto, SQL Server and Databricks.</p>
+        </div>
+        <div class="card span4">
+          <strong>Data Lakehouse & Analytics</strong>
+          <p>Built medallion pipelines (ADF/Databricks) and enabled BI consumption with Tableau/Power BI.</p>
+        </div>
+        <div class="card span4">
+          <strong>Production-grade SQL Processing</strong>
+          <p>Created large-scale Oracle SQL preprocessing scripts with reference tables, fuzzy logic and systematic logging.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="section" id="articles">
+      <h2>Articles & thought leadership</h2>
+      <div class="grid">
+        <div class="card span6">
+          <strong>From Data to Decisions</strong>
+          <p>A practical view on why modern technology leaders must think like architects—systems, governance, and people.</p>
+          <a class="smallLink" href="https://medium.com/@errajeshcs" title="https://medium.com/@errajeshcs">Read on Medium <span>→</span></a>
+        </div>
+        <div class="card span6">
+          <strong>Data Engineering 2030</strong>
+          <p>How trends like lakehouse, AI/ML and data product thinking reshape what “good” delivery looks like.</p>
+          <a class="smallLink" href="https://medium.com/@errajeshcs" title="https://medium.com/@errajeshcs">Read article <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY (optional, like Kushal site visuals) -->
+    <section class="section" id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="shot"><img src="1.png" alt="Tower Bridge, London" /></div>
+        <div class="shot"><img src="2.jpg" alt="Rajesh photo (outdoor)" /></div>
+        <div class="shot"><img src="3.webp" alt="Rajesh photo (jacket)" /></div>
+        <div class="shot"><img src="4.jpg" alt="Family photo" /></div>
+        <div class="shot"><img src="5.jpg" alt="Elephants in the wild" /></div>
+         <div class="shot"><img src="6.png" alt="Elephants in the wild" /></div>
+         <div class="shot"><img src="7.png" alt="Elephants in the wild" /></div>
+         <div class="shot"><img src="8.png" alt="Elephants in the wild" /></div>
+         <div class="shot"><img src="9.png" alt="Elephants in the wild" /></div>
+         <div class="shot"><img src="10.png" alt="Elephants in the wild" /></div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section class="section" id="connect">
+      <h2>Let’s connect</h2>
+      <div class="grid">
+        <div class="card span8">
+          <strong>Ready to collaborate?</strong>
+          <p>
+            Open to discussing data architecture, cloud migration strategy, modern data platform build-outs, and analytics enablement ,Education and Maths.
+            If you’re hiring or need a hands-on architect for a critical delivery, let’s talk.
+          </p>
+          <div class="btnRow" role="group" aria-label="Contact buttons">
+            <a class="btn dark" href="mailto:errajeshcs@gmail.com">Email me</a>
+            <a class="btn" href="https://www.linkedin.com/in/rajesh-kumar-singh-pmp%C2%AE-0b289415/" title="Add your LinkedIn URL">LinkedIn</a>
+            <a class="btn" href="https://github.com/errajeshcs-pixel" title="Add your GitHub URL">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card span4">
+          <strong>Details</strong>
+          <p>
+            <b>Email:</b> errajeshcs@gmail.com<br/>
+            <b>Location:</b> UK<br/>
+            <b>Availability:</b> By appointment
+            <a class="smallLink" href="https://topmate.io/errajeshcs">Let’s collaborate <span>→</span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Rajesh Kumar Singh • All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
